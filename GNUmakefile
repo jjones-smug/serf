@@ -1,6 +1,6 @@
 SHELL := bash
 
-GOTOOLS := github.com/mitchellh/gox
+GOTOOLS := github.com/jjones-smug/gox
 VERSION := $(shell awk -F\" '/Version = "(.*)"/ { print $$2; exit }' version/version.go)
 GITSHA:=$(shell git rev-parse HEAD)
 GITBRANCH:=$(shell git symbolic-ref --short HEAD 2>/dev/null)
