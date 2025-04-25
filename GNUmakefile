@@ -30,6 +30,10 @@ dev:
 dist:
 	@sh -c "'$(CURDIR)/scripts/dist.sh' $(VERSION)"
 
+# mine just builds for the local instanec (like "dev") without changing the version
+mine:
+	@"$(CURDIR)/scripts/build.sh" mine
+
 get-tools:
 	go get -u -v $(GOTOOLS)
 
@@ -60,4 +64,4 @@ vet:
 		exit 1; \
 	fi
 
-.PHONY: default bin cov format dev dist get-tools subnet test testrace tools vet
+.PHONY: default bin cov format dev dist mine get-tools subnet test testrace tools vet

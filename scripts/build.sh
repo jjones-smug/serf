@@ -30,7 +30,7 @@ rm -rf pkg/*
 mkdir -p bin/
 
 # If its dev mode, only build for ourself
-if [ "${SERF_DEV}x" != "x" ]; then
+if [ "${SERF_DEV}x" != "x" -o "$1" = "mine" ]; then
     XC_OS=$(go env GOOS)
     XC_ARCH=$(go env GOARCH)
 fi
